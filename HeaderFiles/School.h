@@ -23,6 +23,14 @@ private:
     void showTeacherPanel(teacher& Teacher);
     void showPrincipalPanel();
     void welcomeScreen();
+    void enrollStudent();
+    void enrollTeacher();
+    void showStudents();
+    void showTeachers();
+    void showSubjects();
+    void loginRole();
+    void loginUsername();
+    void loginPassword();
 
 public:
     int getIdCounter()const ;
@@ -33,6 +41,8 @@ public:
     void setNumberOfExams();
     void setStudent(student& nS);
     void setTeacher(teacher& nT);
+
+
     school();
 };
 #endif

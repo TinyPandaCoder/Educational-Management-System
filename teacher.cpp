@@ -29,3 +29,8 @@ teacher::teacher() {
         }
     }
 }
+
+void teacher::setCourse(string course) {
+
+    this->course=course;
+}

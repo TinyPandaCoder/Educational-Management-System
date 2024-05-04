@@ -44,5 +44,10 @@ public:
 	void setPassword(string& password);
 	void setDayOfBirth(string& DOB);
     void setPhoneNumber(string& phoneNumber);
+    void inputFirstName(string& inp);
+    void inputLastName(string& inp);
+    void inpitDateOfBirth(string& inp);
+    void inputPhoneNumber(string& inp);
+    void inputGender(string& inp);
 };
 #endif

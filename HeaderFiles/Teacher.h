@@ -14,6 +14,7 @@ public:
 	double getSalary() const;
 	string getCourse() const;
     void showData();
+    void setCourse(string course);
     teacher();
 };
 #endif

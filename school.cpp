@@ -3,15 +3,30 @@
 //
 #include "School.h"
 #include <cstdlib>
+#include <cmath>
 
+string inp;
 
-int school::getIdCounter() const{
-    return this->idCounter;
-}
+//Principal Panel
+#define Enroll_Student 1
+#define Enroll_Teacher 2
+#define Show_Principal_Students 3
+#define Show_Teachers 4
+#define Show_Subjects 5
+#define Log_Out_Principal 6
 
-void school::setIdCounter() {
-    this->idCounter++;
-}
+//Student Panel
+#define Show_Student_Details 1
+#define Show_Classmates 2
+#define Log_Out_Student 3
+
+//Teacher Panel
+#define Show_Teacher_Details 1
+#define Show_Workmates 2
+#define Show_Teacher_Students 3
+#define Hold_Exam 4
+#define Log_Out_Teacher 5
+
 void school::showStudentPanel(student& Student)
 {
     cout<<"\nHello Mr."<<Student.getFirstName()<<" How can we help you?\n\n";
@@ -19,29 +34,28 @@ void school::showStudentPanel(student& Student)
     cout<<"2- Show your classmates\n";
     cout<<"3- Log out\n";
     string op;
+
+    //Validate input
     while (cin>>op)
     {
         if (Validator::validateStudentPanel(op))
             break;
     }
+
     switch (op[0]-'0') {
-        case 1:
+        case Show_Student_Details:
         {
             Student.showData();
-            school::showStudentPanel(Student);
+            showStudentPanel(Student);
             break;
         }
-        case 2:
+        case Show_Classmates:
         {
-            for (auto& it : students)
-            {
-                it.showData();
-                cout<<'\n';
-            }
-            school::showStudentPanel(Student);
+            showStudents();
+            showStudentPanel(Student);
             break;
         }
-        case 3:
+        case Log_Out_Student:
         {
             school::welcomeScreen();
             break;
@@ -57,56 +71,52 @@ void school::showTeacherPanel(teacher& Teacher)
     cout<<"3- Show students\n";
     cout<<"4- Hold exam\n";
     cout<<"5- Log out\n";
+
     string op;
+
+    //Validate input
     while (cin>>op)
     {
         if (Validator::validateTeacherPanel(op))
             break;
     }
-    switch (op[0]-'0') {
-        case 1:
+
+    switch (op[0]-'0')
+    {
+        case Show_Teacher_Details:
         {
             Teacher.showData();
-            school::showTeacherPanel( Teacher);
+            showTeacherPanel( Teacher);
             break;
         }
-        case 2:
+        case Show_Workmates:
         {
-            for (auto& it : teachers)
-            {
-                it.showData();
-                cout<<'\n';
-            }
-            school::showTeacherPanel( Teacher);
+            showTeachers();
+            showTeacherPanel( Teacher);
             break;
         }
-        case 3:
+        case Show_Teacher_Students:
         {
-            for (auto& it : students)
-            {
-                it.showData();
-                cout<<'\n';
-            }
-            school::showTeacherPanel( Teacher);
+            showStudents();
+            showTeacherPanel( Teacher);
             break;
         }
-        case 4:
+        case Hold_Exam:
         {
             for (auto &it : students)
             {
-                int totalScore=getNumberOfExams()*100+100;
-                int currentScore=it.getPercentatgeScore()*(getNumberOfExams()*100)+rand()%100;
+                double totalScore=getNumberOfExams()*100+100;
+                double currentScore=it.getPercentatgeScore()*(getNumberOfExams()*100.0)+fmod(rand(),100.0);
                 it.setPercentatgeScore(totalScore/currentScore);
             }
-            school::showTeacherPanel( Teacher);
+            showTeacherPanel( Teacher);
             break;
         }
-        case 5:
+        case Log_Out_Teacher:
         {
             school::welcomeScreen();
             break;
         }
-
     }
 
 }
@@ -125,54 +135,38 @@ void school::showPrincipalPanel(){
             break;
     }
     switch (op[0]-'0') {
-        case 1:
+        case Enroll_Student:
         {
-            student nS;
-            nS.setID(++idCounter);
+            enrollStudent();
+            showPrincipalPanel();
+            break;
+        }
+        case Enroll_Teacher:
+        {
+            enrollTeacher();
+            showPrincipalPanel();
 
-            students.push_back(nS);
-            school::showPrincipalPanel();
             break;
         }
-        case 2:
+        case Show_Principal_Students:
         {
-            teacher nT;
-            nT.setID(++idCounter);
-            subject sub;
-            sub.setID(++idCounter);
-            subjects.push_back(sub);
-            teachers.push_back(nT);
-            school::showPrincipalPanel();
+            showStudents();
+            showPrincipalPanel();
             break;
         }
-        case 3:
+        case Show_Teachers:
         {
-            for (auto& it : students)
-            {
-                it.showData();
-            }
-            school::showPrincipalPanel();
+            showTeachers();
+            showPrincipalPanel();
             break;
         }
-        case 4:
+        case Show_Subjects:
         {
-            for (auto& it : teachers)
-            {
-                it.showData();
-            }
-            school::showPrincipalPanel();
+            showSubjects();
+            showPrincipalPanel();
             break;
         }
-        case 5:
-        {
-            for (auto& it : subjects)
-            {
-                it.showdData();
-            }
-            school::showPrincipalPanel();
-            break;
-        }
-        case 6:
+        case Log_Out_Principal:
         {
             school::welcomeScreen();
             break;
@@ -190,39 +184,10 @@ void  school::welcomeScreen()
         cout<<"1- Principal\n";
         cout<<"2- Student\n";
         cout<<"3- Teacher\n";
-        string inp;
 
-        //Log in Role
-        while (cin>>inp)
-        {
-            if (Validator::validateLogInPanel(inp))
-            {
-                this->currentRole=inp;
-                break;
-            }
-        }
-
-        //Log in Username
-        cout<<"Please enter your username:\n";
-        while (cin>>inp)
-        {
-            if (Validator::validateUsername(inp))
-            {
-                this->usernameCurrnet=inp;
-                break;
-            }
-        }
-
-        //Log in Password
-        cout<<"Please enter your password:\n";
-        while (cin>>inp)
-        {
-            if (Validator::validatePassword(inp))
-            {
-                this->passwordCurrent = inp;
-                break;
-            }
-        }
+        loginRole();
+        loginUsername();
+        loginPassword();
 
         if (usernames.count(this->usernameCurrnet)&&usernames[this->usernameCurrnet]==this->passwordCurrent) {
             found=true;
@@ -233,6 +198,7 @@ void  school::welcomeScreen()
                 for (auto &it: students)
                     if (it.getUsername() == usernameCurrnet) {
                         showStudentPanel(it);
+                        found=true;
                         break;
                     }
             }
@@ -243,6 +209,8 @@ void  school::welcomeScreen()
                     if (it.getUsername() == usernameCurrnet)
                     {
                         showTeacherPanel(it);
+                        found=true;
+                        break;
                     }
                 }
             }
@@ -277,59 +245,153 @@ void school::setUsername(string &userName, string password) {
 }
 
 void school::setStudent(student& nS) {
-    string op;
+    string user,pass;
     cout<<"Please Enter username\n";
-    while (cin>>op)
+    while (cin>>user)
     {
-        if (Validator::validateUsername(op))
+        if (Validator::validateUsername(user))
         {
-            if (usernames.count(op))
+            if (usernames.count(user))
             {
                 cout<<"Sorry this username already exist. Please try again.\n";
             }
             else
             {
-                nS.setUsername(op);
+                nS.setUsername(user);
                 break;
             }
         }
     }
     cout<<"Please Enter password\n";
-    while (cin>>op)
+    while (cin>>pass)
     {
-        if (Validator::validatePassword(op))
+        if (Validator::validatePassword(pass))
         {
-            nS.setPassword(op);
+            nS.setPassword(pass);
+            break;
+        }
+    }
+    usernames[user]=pass;
+}
+
+void school::setTeacher(teacher& nT) {
+    string user,pass;
+    cout<<"Please Enter username\n";
+    while (cin>>user)
+    {
+        if (Validator::validateUsername(user))
+        {
+            if (usernames.count(user))
+            {
+                cout<<"Sorry this username already exist. Please try again.\n";
+            }
+            else
+            {
+                nT.setUsername(user);
+                break;
+            }
+        }
+    }
+    cout<<"Please Enter password\n";
+    while (cin>>pass)
+    {
+        if (Validator::validatePassword(pass))
+        {
+            nT.setPassword(pass);
+            break;
+        }
+    }
+    usernames[user]=pass;
+}
+
+int school::getIdCounter() const{
+    return this->idCounter;
+}
+
+void school::setIdCounter() {
+    this->idCounter++;
+}
+
+void school::enrollTeacher() {
+    teacher nT;
+    nT.setID(++idCounter);
+    subject sub;
+    nT.setCourse(sub.getName());
+    sub.setID(++idCounter);
+    subjects.push_back(sub);
+    setTeacher(nT);
+    teachers.push_back(nT);
+    school::showPrincipalPanel();
+}
+
+void school::enrollStudent() {
+    student nS;
+    nS.setID(++idCounter);
+    setStudent(nS);
+    students.push_back(nS);
+    school::showPrincipalPanel();
+}
+
+void school::showStudents() {
+    for (auto& it : students)
+    {
+        it.showData();
+    }
+}
+
+void school::showTeachers() {
+    for (auto& it : teachers)
+    {
+        it.showData();
+    }
+    school::showPrincipalPanel();
+}
+
+void school::showSubjects() {
+    for (auto& it : subjects)
+    {
+        it.showdData();
+    }
+    school::showPrincipalPanel();
+}
+
+void school::loginRole() {
+    //Log in Role
+    while (cin>>inp)
+    {
+        if (Validator::validateLogInPanel(inp))
+        {
+            this->currentRole=inp;
             break;
         }
     }
 }
 
-void school::setTeacher(teacher& nT) {
-    string op;
-    cout<<"Please Enter username\n";
-    while (cin>>op)
+void school::loginUsername() {
+
+    //Log in Username
+    cout<<"Please enter your username:\n";
+    while (cin>>inp)
     {
-        if (Validator::validateUsername(op))
+        if (Validator::validateUsername(inp))
         {
-            if (usernames.count(op))
-            {
-                cout<<"Sorry this username already exist. Please try again.\n";
-            }
-            else
-            {
-                nT.setUsername(op);
-                break;
-            }
-        }
-    }
-    cout<<"Please Enter password\n";
-    while (cin>>op)
-    {
-        if (Validator::validatePassword(op))
-        {
-            nT.setPassword(op);
+            this->usernameCurrnet=inp;
             break;
         }
     }
+}
+
+void school::loginPassword() {
+
+    //Log in Password
+    cout<<"Please enter your password:\n";
+    while (cin>>inp)
+    {
+        if (Validator::validatePassword(inp))
+        {
+            this->passwordCurrent = inp;
+            break;
+        }
+    }
+
 }

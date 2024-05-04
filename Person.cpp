@@ -1,8 +1,5 @@
 #include "Person.h"
-#ifndef EDUCATIONAL_OOP_iostream
-#define EDUCATIONAL_OOP_iostream
-#include <iostream>
-#endif
+
 
 int person ::  getID() const
 {
@@ -80,19 +77,28 @@ void person::setPhoneNumber(string& phoneNumber) {
 
 
 void person::addPerson(){
+
     string inp;
-    //First Name
+    inputFirstName(inp);
+    inputLastName(inp);
+    inpitDateOfBirth(inp);
+    inputPhoneNumber(inp);
+    inputGender(inp);
+
+}
+
+void person::inputFirstName(string& inp) {
     cout<<"Please enter first name:\n";
-    while (cin>>inp)
-    {
-        if(Validator::validateName(inp))
-        {
-            this->firstName=inp;
+    while (cin>>inp) {
+        if (Validator::validateName(inp)) {
+            this->firstName = inp;
             break;
         }
     }
+}
 
-    //Last Name
+void person::inputLastName(string& inp) {
+
     cout<<"Please enter last name:\n";
     while (cin>>inp)
     {
@@ -103,7 +109,10 @@ void person::addPerson(){
         }
     }
 
-    //Date of birth
+}
+
+void person::inpitDateOfBirth(string& inp) {
+
     cout<<"Please enter Date of birth:\n";
     while (cin>>inp)
     {
@@ -114,8 +123,10 @@ void person::addPerson(){
         }
     }
 
+}
 
-    //phone number
+void person::inputPhoneNumber(string& inp) {
+
     cout<<"Please enter phone number:\n";
     while (cin>>inp)
     {
@@ -125,6 +136,9 @@ void person::addPerson(){
             break;
         }
     }
+}
+
+void person::inputGender(string& inp) {
 
     //gender
     cout<<"Please enter your gender:\n";

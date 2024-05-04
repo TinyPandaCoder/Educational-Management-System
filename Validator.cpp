@@ -22,7 +22,7 @@ string Validator::error[10]={"Please Enter single number between 1 - 3",
                             "Please enter Date in form YYYY-MM-DD",
                             "Please enter valid number E.g. 01XXXXXXXXX",
                             "Please enter only M or F",
-                            "For Enter Real Number only"};
+                            "Please Enter Real Number only"};
 
 
 bool Validator::validatation(int idx,string& inp)
