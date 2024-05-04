@@ -1,5 +1,11 @@
+#ifndef EDUCATIONAL_OOP_Student_H
+#define EDUCATIONAL_OOP_Student_H
+
+#ifndef EDUCATIONAL_OOP_Person_H
 #include "Person.h"
-class  student :  public person{
+#endif
+
+class  student : public person{
 private:
     double GPA;
 public:
@@ -9,3 +15,4 @@ public:
     void showData()const;
 
 };
+#endif

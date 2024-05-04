@@ -1,4 +1,13 @@
+#ifndef EDUCATIONAL_OOP_Principal_H
+#define EDUCATIONAL_OOP_Principal_H
 #include "Person.h"
+
+//For demonstration only don't type these information in code
+string adminUsername="root";
+string adminPassword="password";
+string adminFirstName="Maher";
+string adminLastName="Mahmoud";
+
 class principal : public person {
 private:
     void addStudent();
@@ -6,12 +15,10 @@ private:
 public:
     principal()
     {
-        setUsername("root");
-        setPassword("password");
-        setFirstName("Maher");
-        setLastName("Mahmoud");
+        setUsername(adminUsername);
+        setPassword(adminPassword);
+        setFirstName(adminFirstName);
+        setLastName(adminLastName);
     }
-    friend class school;
-
-
 };
+#endif

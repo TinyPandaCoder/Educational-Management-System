@@ -6,7 +6,6 @@ set(CMAKE_CXX_STANDARD 20)
 include_directories(HeaderFiles)
 
 file(GLOB SOURCES "*.cpp")
-add_executable(Educational_OOP ${SOURCES}
-        HeaderFiles/school.cpp)
+add_executable(Educational_OOP ${SOURCES})
 
 

@@ -1,8 +1,5 @@
-#include "School.h"
 #include "Person.h"
-
 #include <iostream>
-
 int person ::  getID() const
 {
 	return this->ID;
@@ -45,35 +42,35 @@ void person::showData() const {
 }
 
 
-void person::setID(int ID)
+void person::setID(int& ID)
 {
 	this->ID = ID;
 }
-void person::setGender(char gender)
+void person::setGender(char& gender)
 {
 	this->gender = gender;
 }
-void person::setFirstName(string firstName)
+void person::setFirstName(string& firstName)
 {
 	this->firstName = firstName;
 }
-void person::setLastName(string lastName)
+void person::setLastName(string& lastName)
 {
 	this->lastName = lastName;
 }
-void person::setUsername(string userName)
+void person::setUsername(string& username)
 {
-	this->username = userName;
+	this->username = username;
 }
-void person::setPassword(string password)
+void person::setPassword(string& password)
 {
 	this->password = password;
 }
-void person::setDayOfBirth(string DOB)
+void person::setDayOfBirth(string& DOB)
 {
 	this->DOB = DOB;
 }
-void person::setPhoneNumber(string phoneNumber) {
+void person::setPhoneNumber(string& phoneNumber) {
 	 this->phoneNumber=phoneNumber;
 }
 
@@ -84,4 +81,3 @@ void person::addPerson() {
 person::person() {
 
 }
-

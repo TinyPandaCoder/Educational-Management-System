@@ -1,5 +1,10 @@
-#pragma once
+#ifndef EDUCATIONAL_OOP_Person_H
+#define EDUCATIONAL_OOP_Person_H
+
+#ifndef EDUCATIONAL_OOP_String
+#define EDUCATIONAL_OOP_String
 #include <string>
+#endif
 using namespace std;
 class person {
 private:
@@ -23,15 +28,14 @@ public:
 	string getDayOfBirth()const;
     string getPhoneNumber()const;
     virtual void addPerson() ;
-
     virtual void showData() const;
-
-    void setID(int ID) ;
-	void setGender(char gender);
-	void setFirstName(string firstName);
-	void setLastName(string lastName);
-	void setUsername(string userName);
-	void setPassword(string password);
-	void setDayOfBirth(string DOB);
-    void setPhoneNumber(string phoneNumber);
+    void setID(int &ID) ;
+	void setGender(char& gender);
+	void setFirstName(string& firstName);
+	void setLastName(string &lastName);
+	void setUsername(string& username);
+	void setPassword(string& password);
+	void setDayOfBirth(string& DOB);
+    void setPhoneNumber(string& phoneNumber);
 };
+#endif
