@@ -1,8 +1,16 @@
-#ifndef EDUCATIONAL_OOP_Person_H
-#define EDUCATIONAL_OOP_Person_H
+#ifndef EDUCATIONAL_OOP_PERSON_H
+#define EDUCATIONAL_OOP_PERSON_H
 
-#ifndef EDUCATIONAL_OOP_String
-#define EDUCATIONAL_OOP_String
+#ifndef EDUCATIONAL_OOP_VALIDATOR_H
+
+#include "Validator.h"
+
+#endif
+
+
+
+#ifndef EDUCATIONAL_OOP_STRING
+#define EDUCATIONAL_OOP_STRING
 #include <string>
 #endif
 using namespace std;
@@ -18,7 +26,7 @@ private:
 
 public:
 
-    person();
+    void addPerson();
     string getUsername()const;
     int getID () const;
 	char getGender() const;
@@ -27,7 +35,6 @@ public:
     string getPassword()const;
 	string getDayOfBirth()const;
     string getPhoneNumber()const;
-    virtual void addPerson() ;
     virtual void showData() const;
     void setID(int &ID) ;
 	void setGender(char& gender);

@@ -16,18 +16,21 @@ private:
     vector<student> students;
     vector<subject> subjects;
     principal princ;
-    int idCounter;
+    int idCounter,numberOfExams;
     map<string,string> usernames;
     string usernameCurrnet,passwordCurrent,currentRole;
     void showStudentPanel(student& Student);
     void showTeacherPanel(teacher& Teacher);
     void showPrincipalPanel();
-
+    void welcomeScreen();
 
 public:
-
-    int getIdCounter();
+    int getIdCounter()const ;
+    int getNumberOfExams()const;
+    bool findUsername(string& userName) const;
+    void setUsername(string& userName,string password);
     void setIdCounter();
+    void setNumberOfExams();
     school();
 };
 #endif

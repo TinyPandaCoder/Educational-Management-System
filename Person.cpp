@@ -1,5 +1,9 @@
 #include "Person.h"
+#ifndef EDUCATIONAL_OOP_iostream
+#define EDUCATIONAL_OOP_iostream
 #include <iostream>
+#endif
+
 int person ::  getID() const
 {
 	return this->ID;
@@ -74,10 +78,62 @@ void person::setPhoneNumber(string& phoneNumber) {
 	 this->phoneNumber=phoneNumber;
 }
 
-void person::addPerson() {
 
-}
+void person::addPerson(){
+    string inp;
+    //First Name
+    cout<<"Please enter first name:\n";
+    while (cin>>inp)
+    {
+        if(Validator::validateName(inp))
+        {
+            this->firstName=inp;
+            break;
+        }
+    }
 
-person::person() {
+    //Last Name
+    cout<<"Please enter last name:\n";
+    while (cin>>inp)
+    {
+        if(Validator::validateName(inp))
+        {
+            this->lastName=inp;
+            break;
+        }
+    }
 
+    //Date of birth
+    cout<<"Please enter Date of birth:\n";
+    while (cin>>inp)
+    {
+        if (Validator::validateDate(inp))
+        {
+            this->DOB=inp;
+            break;
+        }
+    }
+
+
+    //phone number
+    cout<<"Please enter phone number:\n";
+    while (cin>>inp)
+    {
+        if (Validator::validatePhoneNumber(inp))
+        {
+            this->phoneNumber=inp;
+            break;
+        }
+    }
+
+    //gender
+    cout<<"Please enter your gender:\n";
+    while (cin>>inp)
+    {
+        if (Validator::validateGender(inp))
+        {
+            this->gender=inp[0];
+            break;
+        }
+    }
 }

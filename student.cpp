@@ -1,16 +1,19 @@
 #include "Student.h"
-#include <iostream>
-double student::getGPA()const {
-	return this->GPA;
+
+
+double student::getPercentatgeScore()const {
+	return this->percentatgeScore;
 }
-void student::setGPA(double GPA) {
-	this->GPA = GPA;
+void student::setPercentatgeScore(double percentatgeScore) {
+	this->percentatgeScore = percentatgeScore;
 }
 void student::showData() const {
     person::showData();
-    cout<<"GPA: "<<this->GPA<<'\n';
+    cout<<fixed<<"Percentatge Score: "<<this->percentatgeScore<<"%\n\n";
 }
 
-void student::addStudent() {
-    this->person::addPerson();
+student::student() {
+    this->addPerson();
 }
+
+

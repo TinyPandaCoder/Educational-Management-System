@@ -1,5 +1,7 @@
 #include "Teacher.h"
-#include <iostream>
+
+
+
 void teacher::holdExam(){
 
 }
@@ -11,7 +13,19 @@ string teacher::getCourse() const{
 }
 void teacher::showData(){
     person::showData();
-    cout<<"Salary: "<< this->salary<<'\n';
-    cout<<"Course: "<< this->course<<'\n';
-
+    cout<<fixed<<"Salary: "<< this->salary<<'\n';
+    cout<<"Course: "<< this->course<<"\n\n";
+}
+teacher::teacher() {
+    this->addPerson();
+    cout<<"Please Enter Salary: ";
+    string inp;
+    while (cin>>inp)
+    {
+        if (Validator::validateRealNumber(inp))
+        {
+            this->salary= stod(inp);
+            break;
+        }
+    }
 }

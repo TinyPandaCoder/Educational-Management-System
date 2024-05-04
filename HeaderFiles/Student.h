@@ -1,5 +1,5 @@
-#ifndef EDUCATIONAL_OOP_Student_H
-#define EDUCATIONAL_OOP_Student_H
+#ifndef EDUCATIONAL_OOP_STUDENT_H
+#define EDUCATIONAL_OOP_STUDENT_H
 
 #ifndef EDUCATIONAL_OOP_Person_H
 #include "Person.h"
@@ -7,12 +7,12 @@
 
 class  student : public person{
 private:
-    double GPA;
+    double percentatgeScore;
 public:
-	double getGPA() const;
-    void addStudent();
-    void setGPA(double GPA);
+	double getPercentatgeScore() const;
+    void setPercentatgeScore(double PercentatgeScore);
     void showData()const;
+    student();
 
 };
 #endif

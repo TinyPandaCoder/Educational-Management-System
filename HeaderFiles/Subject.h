@@ -1,9 +1,8 @@
-#ifndef EDUCATIONAL_OOP_Subject_H
-#define EDUCATIONAL_OOP_Subject_H
+#ifndef EDUCATIONAL_OOP_SUBJECT_H
+#define EDUCATIONAL_OOP_SUBJECT_H
 
-#ifndef EDUCATIONAL_OOP_String
-#define EDUCATIONAL_OOP_String
-#include <string>
+#ifndef EDUCATIONAL_OOP_VALIDATOR_H
+#include <Validator.h>
 #endif
 
 using namespace std;
@@ -13,10 +12,11 @@ private:
 	int ID;
 public:
 
+    subject();
 	string getName() const;
 	int getID() const;
-
     void setName(string& name);
-	void getID(int &ID);
+	void setID(int &ID);
+    void showdData() const;
 };
 #endif

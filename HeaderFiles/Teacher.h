@@ -1,5 +1,5 @@
-#ifndef EDUCATIONAL_OOP_Teacher_H
-#define EDUCATIONAL_OOP_Teacher_H
+#ifndef EDUCATIONAL_OOP_TEACHER_H
+#define EDUCATIONAL_OOP_TEACHER_H
 
 #ifndef EDUCATIONAL_OOP_Person_H
 #include "Person.h"
@@ -14,5 +14,6 @@ public:
 	double getSalary() const;
 	string getCourse() const;
     void showData();
+    teacher();
 };
 #endif
