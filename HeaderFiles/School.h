@@ -31,6 +31,8 @@ public:
     void setUsername(string& userName,string password);
     void setIdCounter();
     void setNumberOfExams();
+    void setStudent(student& nS);
+    void setTeacher(teacher& nT);
     school();
 };
 #endif

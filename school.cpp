@@ -129,31 +129,7 @@ void school::showPrincipalPanel(){
         {
             student nS;
             nS.setID(++idCounter);
-            cout<<"Please Enter username\n";
-            while (cin>>op)
-            {
-                if (Validator::validateUsername(op))
-                {
-                    if (usernames.count(op))
-                    {
-                        cout<<"Sorry this username already exist. Please try again.\n";
-                    }
-                    else
-                    {
-                        nS.setUsername(op);
-                        break;
-                    }
-                }
-            }
-            cout<<"Please Enter password\n";
-            while (cin>>op)
-            {
-                if (Validator::validatePassword(op))
-                {
-                    nS.setPassword(op);
-                    break;
-                }
-            }
+
             students.push_back(nS);
             school::showPrincipalPanel();
             break;
@@ -165,31 +141,6 @@ void school::showPrincipalPanel(){
             subject sub;
             sub.setID(++idCounter);
             subjects.push_back(sub);
-            cout<<"Please Enter username\n";
-            while (cin>>op)
-            {
-                if (Validator::validateUsername(op))
-                {
-                    if (usernames.count(op))
-                    {
-                        cout<<"Sorry this username already exist. Please try again.\n";
-                    }
-                    else
-                    {
-                        nT.setUsername(op);
-                        break;
-                    }
-                }
-            }
-            cout<<"Please Enter password\n";
-            while (cin>>op)
-            {
-                if (Validator::validatePassword(op))
-                {
-                    nT.setPassword(op);
-                    break;
-                }
-            }
             teachers.push_back(nT);
             school::showPrincipalPanel();
             break;
@@ -323,4 +274,62 @@ bool school::findUsername(string &userName) const {
 
 void school::setUsername(string &userName, string password) {
     usernames[userName]=password;
+}
+
+void school::setStudent(student& nS) {
+    string op;
+    cout<<"Please Enter username\n";
+    while (cin>>op)
+    {
+        if (Validator::validateUsername(op))
+        {
+            if (usernames.count(op))
+            {
+                cout<<"Sorry this username already exist. Please try again.\n";
+            }
+            else
+            {
+                nS.setUsername(op);
+                break;
+            }
+        }
+    }
+    cout<<"Please Enter password\n";
+    while (cin>>op)
+    {
+        if (Validator::validatePassword(op))
+        {
+            nS.setPassword(op);
+            break;
+        }
+    }
+}
+
+void school::setTeacher(teacher& nT) {
+    string op;
+    cout<<"Please Enter username\n";
+    while (cin>>op)
+    {
+        if (Validator::validateUsername(op))
+        {
+            if (usernames.count(op))
+            {
+                cout<<"Sorry this username already exist. Please try again.\n";
+            }
+            else
+            {
+                nT.setUsername(op);
+                break;
+            }
+        }
+    }
+    cout<<"Please Enter password\n";
+    while (cin>>op)
+    {
+        if (Validator::validatePassword(op))
+        {
+            nT.setPassword(op);
+            break;
+        }
+    }
 }
