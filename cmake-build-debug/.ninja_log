@@ -1,13 +1,9 @@
 # ninja log v5
-5	2363	7364646184096792	CMakeFiles/Educational_OOP.dir/Person.cpp.obj	79d4ab0143b50339
-19	654	7364630916799467	CMakeFiles/Educational_OOP.dir/student.cpp.obj	be6a3ad1dbce9802
-3173	4726	7364531202554784	Educational_OOP.exe	c2b99d9a818d55c5
-13	2722	7364642798094696	CMakeFiles/Educational_OOP.dir/main.cpp.obj	6df0f71d77e6b0a2
-21	130	7363913188780948	CMakeFiles/Educational_OOP.dir/principal.cpp.obj	6e2df7b0ecb7da9
-12	1836	7364630928596977	CMakeFiles/Educational_OOP.dir/input.cpp.obj	e39c7cef68a722aa
-23	606	7364630916314348	CMakeFiles/Educational_OOP.dir/subject.cpp.obj	d64ea9ef06ca9998
-1	205	7364647781163747	build.ninja	b58f5f9c9cf1bd59
-27	693	7364630917179134	CMakeFiles/Educational_OOP.dir/teacher.cpp.obj	2bbf55e1f63a168b
-4	1049	7364644447850802	CMakeFiles/Educational_OOP.dir/Principal.cpp.obj	a79e81997f49b211
-16	69	7364642771660013	CMakeFiles/Educational_OOP.dir/school.cpp.obj	246b8e022c7077d5
-1	220	7364647781163747	build.ninja	b58f5f9c9cf1bd59
+27	169	7364659129354341	CMakeFiles/Educational_OOP.dir/school.cpp.obj	246b8e022c7077d5
+34	2014	7364659147813967	CMakeFiles/Educational_OOP.dir/student.cpp.obj	be6a3ad1dbce9802
+5	5095	7364659178603395	CMakeFiles/Educational_OOP.dir/Person.cpp.obj	79d4ab0143b50339
+43	1789	7364659145519650	CMakeFiles/Educational_OOP.dir/subject.cpp.obj	d64ea9ef06ca9998
+53	2029	7364659147983517	CMakeFiles/Educational_OOP.dir/teacher.cpp.obj	2bbf55e1f63a168b
+6	1068	7364660411611891	CMakeFiles/Educational_OOP.dir/Principal.cpp.obj	a79e81997f49b211
+16	3904	7364659166532582	CMakeFiles/Educational_OOP.dir/input.cpp.obj	e39c7cef68a722aa
+21	5236	7364659180005634	CMakeFiles/Educational_OOP.dir/main.cpp.obj	6df0f71d77e6b0a2

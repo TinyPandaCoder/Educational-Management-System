@@ -1,4 +1,6 @@
 #include "School.h"
+#include "Person.h"
+
 #include <iostream>
 
 int person ::  getID() const
@@ -76,45 +78,10 @@ void person::setPhoneNumber(string phoneNumber) {
 }
 
 void person::addPerson() {
-    input in;
-    string inp;
-    //ID
 
-    //First Name
-    cout<<"Please enter first name:\n";
-    inp=in.validatation(5);
-    this->setFirstName(inp);
+}
 
-    //Last Name
-    cout<<"Please enter last name:\n";
-    inp=in.validatation(5);
-    this->setLastName(inp);
+person::person() {
 
-    //Username
-    while (true)
-    {
-        cout<<"Please enter username:\n";
-        inp=in.validatation(5);
-
-            break;
-    }
-
-    //Password
-    cout<<"Please enter password:\n";
-    inp=in.validatation(4);
-    this->setPassword(inp);
-
-    //Date of birth
-    cout<<"Please enter Date of birth:\n";
-    inp=in.validatation(6);
-    this->setDayOfBirth(inp);
-
-    cout<<"Please enter phone number:\n";
-    inp=in.validatation(7);
-    this->setPhoneNumber(inp);
-
-    cout<<"Please enter your gender:\n";
-    inp=in.validatation(8);
-    this->setGender(inp[0]);
 }
 

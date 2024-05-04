@@ -1,0 +1,3 @@
+C:/Users/Mahmoud Alaa/CLionProjects/Educational-OOP/cmake-build-debug-mingw/CMakeFiles/Educational_OOP.dir
+C:/Users/Mahmoud Alaa/CLionProjects/Educational-OOP/cmake-build-debug-mingw/CMakeFiles/edit_cache.dir
+C:/Users/Mahmoud Alaa/CLionProjects/Educational-OOP/cmake-build-debug-mingw/CMakeFiles/rebuild_cache.dir

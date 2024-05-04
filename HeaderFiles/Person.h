@@ -13,6 +13,7 @@ private:
 
 public:
 
+    person();
     string getUsername()const;
     int getID () const;
 	char getGender() const;

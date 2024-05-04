@@ -105,6 +105,13 @@ build CMakeFiles/Educational_OOP.dir/teacher.cpp.obj: CXX_COMPILER__Educational_
   OBJECT_DIR = CMakeFiles\Educational_OOP.dir
   OBJECT_FILE_DIR = CMakeFiles\Educational_OOP.dir
 
+build CMakeFiles/Educational_OOP.dir/HeaderFiles/school.cpp.obj: CXX_COMPILER__Educational_OOP_unscanned_Debug C$:/Users/Mahmoud$ Alaa/CLionProjects/Educational-OOP/HeaderFiles/school.cpp || cmake_object_order_depends_target_Educational_OOP
+  DEP_FILE = CMakeFiles\Educational_OOP.dir\HeaderFiles\school.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I"C:/Users/Mahmoud Alaa/CLionProjects/Educational-OOP/HeaderFiles"
+  OBJECT_DIR = CMakeFiles\Educational_OOP.dir
+  OBJECT_FILE_DIR = CMakeFiles\Educational_OOP.dir\HeaderFiles
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Educational_OOP
@@ -113,7 +120,7 @@ build CMakeFiles/Educational_OOP.dir/teacher.cpp.obj: CXX_COMPILER__Educational_
 #############################################
 # Link the executable Educational_OOP.exe
 
-build Educational_OOP.exe: CXX_EXECUTABLE_LINKER__Educational_OOP_Debug CMakeFiles/Educational_OOP.dir/Person.cpp.obj CMakeFiles/Educational_OOP.dir/Principal.cpp.obj CMakeFiles/Educational_OOP.dir/input.cpp.obj CMakeFiles/Educational_OOP.dir/main.cpp.obj CMakeFiles/Educational_OOP.dir/school.cpp.obj CMakeFiles/Educational_OOP.dir/student.cpp.obj CMakeFiles/Educational_OOP.dir/subject.cpp.obj CMakeFiles/Educational_OOP.dir/teacher.cpp.obj
+build Educational_OOP.exe: CXX_EXECUTABLE_LINKER__Educational_OOP_Debug CMakeFiles/Educational_OOP.dir/Person.cpp.obj CMakeFiles/Educational_OOP.dir/Principal.cpp.obj CMakeFiles/Educational_OOP.dir/input.cpp.obj CMakeFiles/Educational_OOP.dir/main.cpp.obj CMakeFiles/Educational_OOP.dir/school.cpp.obj CMakeFiles/Educational_OOP.dir/student.cpp.obj CMakeFiles/Educational_OOP.dir/subject.cpp.obj CMakeFiles/Educational_OOP.dir/teacher.cpp.obj CMakeFiles/Educational_OOP.dir/HeaderFiles/school.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Educational_OOP.dir
