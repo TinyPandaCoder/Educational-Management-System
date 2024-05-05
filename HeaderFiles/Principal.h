@@ -1,6 +1,6 @@
 #ifndef EDUCATIONAL_OOP_PRINCIPAL_H
 #define EDUCATIONAL_OOP_PRINCIPAL_H
-#include "Person.h"
+#include "../HeaderFiles/Person.h"
 
 
 

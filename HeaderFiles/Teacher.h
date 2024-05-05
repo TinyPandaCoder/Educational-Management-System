@@ -2,7 +2,7 @@
 #define EDUCATIONAL_OOP_TEACHER_H
 
 #ifndef EDUCATIONAL_OOP_Person_H
-#include "Person.h"
+#include "../HeaderFiles/Person.h"
 #endif
 
 class teacher : public person {

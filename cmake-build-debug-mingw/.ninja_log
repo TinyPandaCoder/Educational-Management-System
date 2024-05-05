@@ -1,9 +1,0 @@
-# ninja log v5
-19	113	7364658431395364	CMakeFiles/Educational_OOP.dir/school.cpp.obj	246b8e022c7077d5
-29	840	7364658438404730	CMakeFiles/Educational_OOP.dir/subject.cpp.obj	d64ea9ef06ca9998
-24	880	7364658439072921	CMakeFiles/Educational_OOP.dir/student.cpp.obj	be6a3ad1dbce9802
-36	1058	7364658440798692	CMakeFiles/Educational_OOP.dir/teacher.cpp.obj	2bbf55e1f63a168b
-7	1908	7364658449362761	CMakeFiles/Educational_OOP.dir/Principal.cpp.obj	a79e81997f49b211
-11	2584	7364658456096310	CMakeFiles/Educational_OOP.dir/input.cpp.obj	e39c7cef68a722aa
-3	3712	7364658467332071	CMakeFiles/Educational_OOP.dir/Person.cpp.obj	79d4ab0143b50339
-15	3756	7364658467750989	CMakeFiles/Educational_OOP.dir/main.cpp.obj	6df0f71d77e6b0a2

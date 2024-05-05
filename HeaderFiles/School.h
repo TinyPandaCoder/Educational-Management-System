@@ -1,10 +1,10 @@
 #ifndef EDUCATIONAL_OOP_SCHOOL_H
 #define EDUCATIONAL_OOP_SCHOOL_H
-#include "Teacher.h"
-#include "Student.h"
-#include "Principal.h"
-#include "Subject.h"
-#include "Validator.h"
+#include "../HeaderFiles/Teacher.h"
+#include "../HeaderFiles/Student.h"
+#include "../HeaderFiles/Principal.h"
+#include "../HeaderFiles/Subject.h"
+#include "../HeaderFiles/Validator.h"
 #include <vector>
 #include <map>
 

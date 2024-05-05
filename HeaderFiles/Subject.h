@@ -2,7 +2,7 @@
 #define EDUCATIONAL_OOP_SUBJECT_H
 
 #ifndef EDUCATIONAL_OOP_VALIDATOR_H
-#include <Validator.h>
+#include "../HeaderFiles/Validator.h"
 #endif
 
 using namespace std;
